@@ -1,0 +1,9 @@
+{% extends "base_manager.html" %}
+
+
+{% block content %}
+    <h1>{{ city.name }}</h1>
+    <p>
+        <a href="{% url "cities:list" %}">Back</a>
+    </p>
+{% endblock content %}

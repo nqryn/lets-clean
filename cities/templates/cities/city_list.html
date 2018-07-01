@@ -1,0 +1,30 @@
+{% extends "base_manager.html" %}
+
+
+{% block content %}
+    <h1>Cities</h1>
+
+    <p>
+        <a href="{% url "cities:new" %}">Add a city</a>
+    </p>
+    <table class="table">
+        <thead>
+          <tr>
+                <th>Name</th>
+                <th></th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for city in object_list %}
+                <tr>
+                    <td>{{ city.name }}</td>
+                    <td>
+                        <a href="{% url "cities:detail" city.id %}">Show</a> |
+                        <a href="{% url "cities:edit" city.id %}">Edit</a> |
+                        <a href="{% url "cities:delete" city.id %}">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock content %}
